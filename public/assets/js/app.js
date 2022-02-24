@@ -93,7 +93,8 @@ const handleNoteDelete = (e) => {
   deleteNote(noteId).then(() => {
     getAndRenderNotes();
     renderActiveNote();
-  });
+  })
+  .catch((err)=> console.log('fail to catch'));//WTH!!!!!!
 };
 
 // Sets the activeNote and displays it
