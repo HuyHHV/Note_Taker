@@ -8,7 +8,9 @@ body {
 .save-note {
   display: none;
 }
-
+i {
+  z-index: 1;
+}
 .icons i {
   margin-left: 15px;
   margin-right: 15px;
