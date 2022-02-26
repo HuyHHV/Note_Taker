@@ -25,11 +25,11 @@ Thisan application called Note Taker that can be used to write and save notes. T
 
 The following image shows the web application's appearance and functionality:
 
-![screenshot.](./Assets/screenshot.gif)
+![screenshot.](./screenshot.gif)
 
 
 ## URLs
 
 * Repo URL: https://github.com/HuyHHV/Note_Taker
 
-* App URL: https://huyhhv.github.io/Weather_Dashboard/
+* App URL: https://immense-atoll-02281.herokuapp.com/
