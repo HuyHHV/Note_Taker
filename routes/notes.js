@@ -1,8 +1,6 @@
 const Router = require('express').Router();
 const uuid = require('../tools/uuid');
 const { readFromFile, readAndAppend,writeToFile } = require('../tools/fsUtils');
-const currentNotes = require('../db/db.json');
-let notes=currentNotes;
 
 // GET Route for notes request
 Router.get('/notes', (req, res) => {
@@ -33,17 +31,21 @@ if (req.body) {
 // DELETE Route to delete  note
 Router.delete('/notes/:id', (req, res) => {
 const noteID = req.params.id;
+console.log(req.params.id);
 console.log(`${req.method} request received to delete a note`);
-res.send("DELETE Request Called");
-if (noteID) {
+readFromFile('db/db.json').then((data) => {
+    console.log(JSON.parse(data));
+    res.json(JSON.parse(data))
+    let notes = JSON.parse(data);
     for (let i = 0; i < notes.length; i++) {
-    if (noteID === notes[i].id) {
-        notes.splice(i,1)
-        // console.log(notes);
-        writeToFile('db/db.json',notes); 
+        if (noteID === notes[i].id) {
+            notes.splice(i,1)
+            console.log(notes);
+            writeToFile('db/db.json',notes); 
+            }
     }
-    }
-};
+});
+
 })
   
 module.exports = Router;
