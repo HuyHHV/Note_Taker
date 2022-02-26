@@ -94,7 +94,7 @@ const handleNoteDelete = (e) => {
     getAndRenderNotes();
     renderActiveNote();
   })
-  .catch((err)=> console.log('fail to catch'));//WTH!!!!!!
+  // .catch((err)=> console.log('fail to delete'));
 };
 
 // Sets the activeNote and displays it
