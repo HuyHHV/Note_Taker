@@ -32,7 +32,6 @@ if (req.body) {
   
 // DELETE Route to delete  note
 Router.delete('/notes/:id', (req, res) => {
-// console.log(req.params.id);
 const noteID = req.params.id;
 console.log(`${req.method} request received to delete a note`);
 res.send("DELETE Request Called");
@@ -47,4 +46,4 @@ if (noteID) {
 };
 })
   
-  module.exports = Router;
+module.exports = Router;
